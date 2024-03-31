@@ -10,8 +10,8 @@ Route::get('/', function () {
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::middleware(['auth'])->group(function () {
 Route::get('/admin/dashboard',[UserController::class,'admin_dashboard'])->name('admin_dashboard')->middleware('role:admin');
-Route::get('/editor/dashboard',[UserController::class,'editor_dashboard'])->name('editor_dashboard')->middleware('role:editor');
-Route::get('/viewer/dashboard',[UserController::class,'viewer_dashboard'])->name('viewer_dashboard')->middleware('role:viewer');
+Route::get('/editor/dashboard',[UserController::class,'editor_dashboard'])->name('editor_dashboard')->middleware('role:editor|admin');
+Route::get('/viewer/dashboard',[UserController::class,'viewer_dashboard'])->name('viewer_dashboard')->middleware('role:editor|admin|viewer');
 Route::get('/category',[CategoryController::class,'index'])->name('category');
 Route::get('/add/category',[CategoryController::class,'add_category'])->name('category.add');
 Route::post('/category/store',[CategoryController::class,'category_store'])->name('category.store');
