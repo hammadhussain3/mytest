@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::middleware(['auth'])->group(function () {
-Route::get('/admin/dashboard',[UserController::class,'admin_dashboard'])->name('admin_dashboard')->middleware('role:admin');
+Route::get('/admin/dashboard',[UserController::class,'admin_dashboard'])->name('admin_dashboard');
 Route::get('/editor/dashboard',[UserController::class,'editor_dashboard'])->name('editor_dashboard')->middleware('role:editor|admin');
 Route::get('/viewer/dashboard',[UserController::class,'viewer_dashboard'])->name('viewer_dashboard')->middleware('role:editor|admin|viewer');
 Route::get('/category',[CategoryController::class,'index'])->name('category');
