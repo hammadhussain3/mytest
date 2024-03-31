@@ -16,6 +16,7 @@ Route::get('/category',[CategoryController::class,'index'])->name('category');
 Route::get('/add/category',[CategoryController::class,'add_category'])->name('category.add');
 Route::post('/category/store',[CategoryController::class,'category_store'])->name('category.store');
 Route::get('/category/edit/{id}',[CategoryController::class,'edit_category'])->name('category.edit');
+Route::get('/category/view/{id}',[CategoryController::class,'view_category'])->name('category.view');
 Route::get('/category/delete/{id}',[CategoryController::class,'delete_category'])->name('category.delete');
 Route::post('/category/update',[CategoryController::class,'update_category'])->name('update_category');
 });

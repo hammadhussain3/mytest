@@ -54,6 +54,9 @@
                     </td>-->
                     <td>
                       <div class="d-flex">
+                        @can('read')
+                        <a href="{{route('category.view',$record->id)}}"><span class="fa fa-eye"> </span></a>&nbsp;
+                        @endcan
                         @can('update')
                         <a href="{{route('category.edit',$record->id)}}"><span class="fa fa-pencil"> </span></a>&nbsp;
                         @endcan

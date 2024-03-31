@@ -49,6 +49,11 @@ class CategoryController extends Controller
 		
 		return redirect('/category');
 	}
+
+	public function view_category($id){
+		$category=Category::where('id',$id)->first();
+		return view('category.view',compact('category'));
+	}
 	public function delete_category($id)
 	{
 		// Category::findOrFail($id)->delete();
